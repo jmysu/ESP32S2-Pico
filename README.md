@@ -4,7 +4,7 @@ LCD works with LovYanGFX or TFTeSPI<br>
 
 <br>
 
-<img src="S2MoveIcons0310.gif" width="200" /><img src="S2GifPlayer0310.gif" width="200" /> 
+<img src="S2MoveIcons0310.gif" width="200" /> &nbsp; <img src="S2GifPlayer0310.gif" width="200" /> 
 
 <br>
 
