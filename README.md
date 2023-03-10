@@ -3,9 +3,7 @@ PlatformIO project w/ ESP32S2-Pico <br>
 LCD works with LovYanGFX or TFTeSPI<br>
 
 <br>
-<img src="S2MoveIcons0310.gif" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-<img src="S2GifPlayer0310.gif" width="45%"> 
+<img src="S2MoveIcons0310.gif" width="45%">&nbsp; &nbsp; &nbsp; &nbsp;<img src="S2GifPlayer0310.gif" width="45%"> 
 <br>
 
 
