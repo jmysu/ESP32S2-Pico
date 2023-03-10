@@ -3,9 +3,10 @@ PlatformIO project w/ ESP32S2-Pico <br>
 LCD works with LovYanGFX or TFTeSPI<br>
 
 <br>
-<img src="S2MoveIcons0310.gif" align="left"> <img src="S2GifPlayer0310.gif" align="right">
+<img src="S2MoveIcons0310.gif" align="left">  <img src="S2GifPlayer0310.gif" align="right"> <br>
 
 <br>
+
 
 ### Project LGFX Move icons <br>
 LGFX LCD move icons demo w/ S2Pico+Waveshare 2.8" Pico-LCD <br>
