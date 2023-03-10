@@ -1,6 +1,6 @@
 # ESP32S2-Pico
 PlatformIO project w/ ESP32S2-Pico <br>
-LCD works with LovYanGFX/TFTeSPI<br>
+LCD works with LovYanGFX or TFTeSPI<br>
 
 <br>
 <img src="S2MoveIcons0310.gif"><img src="S2GifPlayer0310.gif">
