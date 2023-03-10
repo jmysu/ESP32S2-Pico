@@ -1,0 +1,56 @@
+//paulstoffregen/XPT2046_Touchscreen
+#include <Arduino.h>
+#include <XPT2046_Touchscreen.h>
+#include <SPI.h>
+#include <USB.h>
+USBCDC USBSerial;
+#define Serial USBSerial
+ 
+// connect the SPI pins (MISO, MOSI, SCK) to the hardware SPI
+#define TOUCH_IRQ   37
+#define TOUCH_CS    36
+#define TOUCH_MISO  12
+#define TOUCH_MOSI  11
+#define TOUCH_SCLK  10
+
+#define TFT_CS      17
+#define SD_CS       42
+
+#define CS_PIN  36
+// MOSI=11, MISO=12, SCK=13
+//XPT2046_Touchscreen ts(CS_PIN);
+#define TIRQ_PIN  37
+//XPT2046_Touchscreen ts(CS_PIN);  // Param 2 - NULL - No interrupts
+//XPT2046_Touchscreen ts(CS_PIN, 255);  // Param 2 - 255 - No interrupts
+XPT2046_Touchscreen ts(CS_PIN, TIRQ_PIN);  // Param 2 - Touch IRQ Pin - interrupt enabled polling
+
+void setup() {
+    
+    USBSerial.setDebugOutput(true); 
+    USBSerial.begin(115200);
+    USB.begin();
+    delay(2000);
+    USBSerial.println("Starting Touch....");
+  
+    pinMode(TFT_CS, OUTPUT);digitalWrite(TFT_CS, HIGH); //Disable TFT 
+    pinMode(SD_CS, OUTPUT); digitalWrite(SD_CS, HIGH);  //Disable SD
+    SPI.begin(TOUCH_SCLK, TOUCH_MISO, TOUCH_MOSI, TOUCH_CS);
+
+  ts.begin();
+  ts.setRotation(3);
+  while (!Serial && (millis() <= 1000));
+}
+
+void loop() {
+  if (ts.touched()) { //Z_THRESHOLD 400
+    TS_Point p = ts.getPoint();
+    Serial.print("Pressure = ");
+    Serial.print(p.z);
+    Serial.print(", x = ");
+    Serial.print(p.x);
+    Serial.print(", y = ");
+    Serial.print(p.y);
+    delay(100);
+    Serial.println();
+  }
+}
